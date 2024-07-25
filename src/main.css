@@ -12,7 +12,7 @@
 
 	--panel-roundness: 0px;
 
-	--bg-0: oklch(19% 0 0);
+	--bg-0: oklch(25% 0 0);
 	--bg-1: oklch(23% 0 0);
 	--bg-2: oklch(27% 0 0);
 	--bg-3: oklch(31% 0 0);
@@ -24,7 +24,7 @@
 	--txt-dark: var(--bg-0);
 	--txt-link: var(--cyan);
 	--txt-0: oklch(90% 0 0);
-	--txt-1: oklch(80% 0 0);
+	--txt-1: oklch(90% 0 0);
 	--txt-2: oklch(60% 0 0);
 	--txt-3: oklch(40% 0 0);
 
@@ -32,7 +32,7 @@
 	--acc-1: var(--purple-1);
 	--acc-2: var(--purple-2);
 
-	--border-width: 2px;
+	--border-width: 3px;
 	--border-color: var(--bg-3);
 	--border-hover-color: var(--acc-0);
 	--border-transition: 0.2s ease;
