@@ -1,69 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 :root {
-	--font: 'DM Mono';
-	letter-spacing: -0.05ch;
-	font-weight: 300;
-	--label-font-weight: 500;
-
-	--corner-text: 'system24';
-
-	--pad: 16px;
-	--txt-pad: 10px;
-
-	--panel-roundness: 0px;
-
-	--bg-0: oklch(19% 0 0);
-	--bg-1: oklch(23% 0 0);
-	--bg-2: oklch(27% 0 0);
-	--bg-3: oklch(31% 0 0);
-
-	--hover: oklch(54% 0 0 / 0.1);
-	--active: oklch(54% 0 0 / 0.2);
-	--selected: var(--active);
-
-	--txt-dark: var(--bg-0);
-	--txt-link: var(--cyan);
-	--txt-0: oklch(90% 0 0);
-	--txt-1: oklch(80% 0 0);
-	--txt-2: oklch(60% 0 0);
-	--txt-3: oklch(40% 0 0);
-
-	--acc-0: var(--purple);
-	--acc-1: var(--purple-1);
-	--acc-2: var(--purple-2);
-
-	--border-width: 2px;
-	--border-color: var(--bg-3);
-	--border-hover-color: var(--acc-0);
-	--border-transition: 0.2s ease;
-
-	--online-dot: var(--green);
-	--dnd-dot: var(--pink);
-	--idle-dot: var(--yellow);
-	--streaming-dot: var(--purple);
-
-	--mention-txt: var(--acc-0);
-	--mention-bg: color-mix(in oklch, var(--acc-0), transparent 90%);
-	--mention-overlay: color-mix(in oklch, var(--acc-0), transparent 90%);
-	--mention-hover-overlay: color-mix(in oklch, var(--acc-0), transparent 95%);
-	--reply-overlay: var(--active);
-	--reply-hover-overlay: var(--hover);
-
-	--pink: oklch(73% 0.12 0);
-	--pink-1: oklch(63% 0.12 0);
-	--pink-2: oklch(53% 0.12 0);
-	--purple: oklch(73% 0.12 300);
-	--purple-1: oklch(63% 0.12 300);
-	--purple-2: oklch(53% 0.12 300);
-	--cyan: oklch(73% 0.12 200);
-	--yellow: oklch(78% 0.12 80);
-	--green: oklch(73% 0.12 160);
-	--green-1: oklch(63% 0.12 160);
-	--green-2: oklch(53% 0.12 160);
-}
-
-:root {
 	--font-primary: var(--font), 'gg mono', monospace;
 	--font-display: var(--font), 'gg mono', monospace;
 	--font-code: var(--font), 'gg mono', monospace;
@@ -84,8 +21,7 @@
 [class^=members_] /* member list inner */,
 [class^=member_] /* member containers */,
 [class^=searchResultsWrap_] /* search results */,
-.container_adcaac /* vc panel */,
-[class^=channelTextArea] > [class^=scrollableContainer] {
+.container_adcaac /* vc panel */ {
 	background: none;
 }
 /* fix bgs */
@@ -177,7 +113,7 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 [class^=sidebar_] /* channel list and chat */ {
 	margin-right: var(--pad);
 }
-[class^=content_] > [class^=resizeHandle_] /* pretend to be a margin */ {
+[class^=resizeHandle_] /* pretend to be a margin */ {
 	width: var(--pad);
 }
 
@@ -207,7 +143,6 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 [class^=searchResultsWrap_] /* search results */,
 .scroller_fb4810 /* new thread */,
 [class^=chat_] > [class*=container_] {
-	border-radius: var(--panel-roundness);
 	border: var(--border-width) solid var(--border-color);
 	transition: border-color var(--border-transition);
 	&:hover {
@@ -237,7 +172,7 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 
 /* move chat bar out */
 :root {
-	--custom-channel-textarea-text-area-height: 56px;
+	--custom-channel-textarea-text-area-height: 50px;
 }
 .form_a7d72e {
 	padding: 0;
@@ -253,7 +188,7 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 [class^='form_'] [class^='channelTextArea_'] {
 	margin: 0;
 	margin-top: var(--pad);
-	border-radius: var(--panel-roundness);
+	border-radius: 0;
 	box-sizing: border-box;
 }
 [class^='form_'] > [class^='typing_'] {
@@ -267,9 +202,6 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 	border: var(--border-width) solid var(--border-color);
 	border-top: none;
 	transition: border-color var(--border-transition);
-}
-[class^='chatContent_']:has([class^='typing_']) > [class^='messagesWrapper_'] > [class^='jumpToPresentBar_'] {
-	margin-bottom: 22px;
 }
 .clipContainer_b11c5e {
 	margin-top: 0;
@@ -407,7 +339,8 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 }
 #vc-spotify-player,
 .container_adcaac /* vc panel */ {
-	padding: var(--txt-pad) var(--txt-pad) calc(var(--txt-pad) / 2) var(--txt-pad);
+	padding: var(--txt-pad) var(--txt-pad) calc(var(--txt-pad) / 2)
+		var(--txt-pad);
 }
 .horizontal_bba380 > .flex_bba380 /* fix voice connected cut off */ {
 	margin-left: 4px;
@@ -439,6 +372,7 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 }
 #vc-spotify-progress-bar [class^='bar_'] {
 	height: 20px;
+	border-radius: 0;
 	background: var(--bg-1);
 }
 .vc-spotify-time-left,
@@ -476,36 +410,89 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 }
 
 /* adjust divider/border thickness */
-[class^='sectionDivider_'] /* channel list dividers */,
-.separator_a0 /* settings divider */,
-[class^=guildSeparator_] /* server list divider */ {
-	border-bottom: var(--border-width) solid var(--border-color);
-	height: 0;
-}
-#app-mount [class^='divider_'] /* chat dividers */ {
+#app-mount [class^='divider_'],
+.container_c75f85::after,
+[class^='peopleListItem_'] {
 	border-width: var(--border-width);
-}
-.container_c75f85::after /* channel list dividers */,
-[class^=customizationSection_],
-[class^=session_],
-[class^=columnHeading_], [class^=tableCell_] {
-	border-width: var(--border-width);
-	border-color: var(--border-color);
-}
-[class^='divider_']:not(.isUnread_c2654d),
-[class^='sectionDivider_'],
-#vc-spotify-player,
-.separator_a0,
-[class^='guildSeparator_'] {
-	border-color: var(--border-color);
 }
 [class^='unreadPill_'][class*='endCap_'] {
 	top: calc(-6px - 0.5 * var(--border-width));
+}
+[class^='sectionDivider_'] {
+	border-bottom: var(--border-width) solid var(--border-color);
+	height: 0;
 }
 
 /* toolbar order */
 [class^='toolbar_'] > [class^='search_'] {
 	order: -1;
+}
+
+/* unrounding */
+::-webkit-scrollbar-thumb,
+* {
+	border-radius: 0 !important;
+}
+/* hide round masks */
+[class^='listItem_'] [class^='wrapper_'] > [class^='svg_'] > mask,
+[class^='bannerSVGWrapper_'] > mask > circle {
+	display: none;
+}
+[class^='mask_'] > foreignObject,
+[class^='svg_'] > foreignObject {
+	mask-image: none;
+}
+/* hide status indicators */
+[class^='mask_'] > rect,
+[class^='mask_'] > circle,
+[class^='mask_'] > svg,
+.container_e85446 > [class^='svg_'] > foreignObject > [class^='status_'] {
+	display: none;
+}
+
+/* re-add status indicators */
+.wrapper_c51b4e:has(rect)::after,
+.container_e85446:has(div[style='background-color: rgb(35, 165, 90);'])::after {
+	content: '';
+	display: block;
+	position: absolute;
+	height: 8px;
+	width: 8px;
+	bottom: -4px;
+	right: -4px;
+	border: 2px solid var(--bg-0);
+}
+.wrapper_c51b4e:has(rect[fill='#23a55a'])::after,
+.container_e85446:has(div[style='background-color: rgb(35, 165, 90);'])::after,
+[class^='status_'][style='background-color: rgb(35, 165, 90);'] {
+	background: var(--online-dot) !important;
+}
+.wrapper_c51b4e:has(rect[fill='#f23f43'])::after,
+[class^='status_'][style='background-color: rgb(242, 63, 67);'] {
+	background: var(--dnd-dot) !important;
+}
+.wrapper_c51b4e:has(rect[fill='#f0b232'])::after,
+[class^='status_'][style='background-color: rgb(240, 178, 50);'] {
+	background: var(--idle-dot) !important;
+}
+.wrapper_c51b4e:has(rect[fill='#80848e'])::after,
+[class^='status_'][style='background-color: rgb(128, 132, 142);'] {
+	background: var(--txt-3) !important;
+}
+.wrapper_c51b4e:has(rect[fill='#593695'])::after {
+	background: var(--streaming-dot);
+}
+
+/* fix server list badges */
+[class^='lowerBadge_'] {
+	border: 2px solid var(--bg-0);
+	bottom: -4px;
+	right: -4px;
+}
+[class^='upperBadge_'] {
+	border: 2px solid var(--bg-0);
+	top: -4px;
+	right: -4px;
 }
 
 .theme-dark,
@@ -518,7 +505,7 @@ html.theme-light {
 	--android-navigation-scrim-background: hsl(240 calc(1 * 4%) 4.9% / 0.5);
 	--android-ripple: hsl(0 calc(1 * 0%) 100% / 0.07);
 	--autocomplete-bg: var(--bg-1);
-	--background-accent: var(--bg-2);
+	--background-accent: var(--bg-1);
 	--background-floating: var(--primary-800);
 	--background-mentioned: var(--mention-overlay);
 	--background-mentioned-hover: var(--mention-hover-overlay);
@@ -558,7 +545,9 @@ html.theme-light {
 	--border-faint: hsl(0 calc(1 * 0%) 100% / 0.03);
 	--border-strong: hsl(0 calc(1 * 0%) 100% / 0.16);
 	--border-subtle: hsl(0 calc(1 * 0%) 100% / 0.08);
-	--bug-reporter-modal-submitting-background: hsl(220 calc(1 * 8.1%) 7.3% / 0.6);
+	--bug-reporter-modal-submitting-background: hsl(
+		220 calc(1 * 8.1%) 7.3% / 0.6
+	);
 	--button-creator-revenue-background: var(--teal-430);
 	--button-danger-background: var(--red-430);
 	--button-danger-background-active: var(--red-530);
@@ -625,14 +614,16 @@ html.theme-light {
 	--chat-swipe-to-reply-background: var(--primary-660);
 	--chat-swipe-to-reply-gradient-background: hsl(0 calc(1 * 0%) 0% / 0.1);
 	--coachmark-bg: var(--primary-800);
-	--content-inventory-media-seekbar-container: hsl(231 calc(1 * 6.7%) 79.4% / 0.24);
+	--content-inventory-media-seekbar-container: hsl(
+		231 calc(1 * 6.7%) 79.4% / 0.24
+	);
 	--content-inventory-overlay-text-primary: hsl(0 calc(1 * 0%) 100% / 0.85);
 	--content-inventory-overlay-text-secondary: hsl(0 calc(1 * 0%) 100% / 0.7);
 	--content-inventory-overlay-ui-mod: hsl(0 calc(1 * 0%) 100% / 0.7);
 	--content-inventory-overlay-ui-mod-bg: hsl(0 calc(1 * 0%) 0% / 0.1);
 	--context-menu-backdrop-background: hsl(0 calc(1 * 0%) 0% / 0.7);
 	--control-brand-foreground: var(--brand-360);
-	--control-brand-foreground-new: var(--acc-0);
+	--control-brand-foreground-new: var(--brand-360);
 	--creator-revenue-icon-gradient-end: var(--teal-430);
 	--creator-revenue-icon-gradient-start: var(--teal-360);
 	--creator-revenue-info-box-background: hsl(190 calc(1 * 63%) 33.9% / 0.1);
@@ -642,7 +633,9 @@ html.theme-light {
 	--deprecated-card-bg: hsl(225 calc(1 * 6.3%) 12.5% / 0.6);
 	--deprecated-card-editable-bg: hsl(225 calc(1 * 6.3%) 12.5% / 0.3);
 	--deprecated-quickswitcher-input-background: var(--primary-400);
-	--deprecated-quickswitcher-input-placeholder: hsl(0 calc(1 * 0%) 100% / 0.3);
+	--deprecated-quickswitcher-input-placeholder: hsl(
+		0 calc(1 * 0%) 100% / 0.3
+	);
 	--deprecated-store-bg: var(--primary-600);
 	--deprecated-text-input-bg: var(--primary-700);
 	--deprecated-text-input-border: hsl(0 calc(1 * 0%) 0% / 0.3);
@@ -657,7 +650,9 @@ html.theme-light {
 	--embed-title: var(--primary-130);
 	--expression-picker-bg: var(--primary-630);
 	--focus-primary: var(--blue-345);
-	--forum-post-extra-media-count-container-background: hsl(228 calc(1 * 6.7%) 14.7% / 0.8);
+	--forum-post-extra-media-count-container-background: hsl(
+		228 calc(1 * 6.7%) 14.7% / 0.8
+	);
 	--forum-post-tag-background: hsl(228 calc(1 * 6.7%) 14.7% / 0.9);
 	--guild-icon-inactive-bg: var(--primary-630);
 	--guild-icon-inactive-nested-bg: var(--primary-600);
@@ -712,9 +707,15 @@ html.theme-light {
 	--profile-gradient-message-input-border: hsl(228 calc(1 * 6%) 32.5% / 0.48);
 	--profile-gradient-note-background: hsl(0 calc(1 * 0%) 0% / 0.3);
 	--profile-gradient-overlay: hsl(0 calc(1 * 0%) 0% / 0.6);
-	--profile-gradient-overlay-synced-with-user-theme: hsl(0 calc(1 * 0%) 0% / 0.8);
-	--profile-gradient-profile-body-background-hover: hsl(0 calc(1 * 0%) 100% / 0.16);
-	--profile-gradient-role-pill-background: hsl(228 calc(1 * 6.7%) 14.7% / 0.5);
+	--profile-gradient-overlay-synced-with-user-theme: hsl(
+		0 calc(1 * 0%) 0% / 0.8
+	);
+	--profile-gradient-profile-body-background-hover: hsl(
+		0 calc(1 * 0%) 100% / 0.16
+	);
+	--profile-gradient-role-pill-background: hsl(
+		228 calc(1 * 6.7%) 14.7% / 0.5
+	);
 	--profile-gradient-role-pill-border: hsl(0 calc(1 * 0%) 100% / 0.2);
 	--profile-gradient-section-box: hsl(0 calc(1 * 0%) 0% / 0.45);
 	--redesign-activity-card-background: var(--primary-560);
@@ -732,7 +733,9 @@ html.theme-light {
 	--redesign-button-destructive-pressed-background: var(--red-460);
 	--redesign-button-destructive-text: var(--white-500);
 	--redesign-button-overlay-alpha-background: hsl(0 calc(1 * 0%) 0% / 0.54);
-	--redesign-button-overlay-alpha-pressed-background: hsl(0 calc(1 * 0%) 0% / 0.64);
+	--redesign-button-overlay-alpha-pressed-background: hsl(
+		0 calc(1 * 0%) 0% / 0.64
+	);
 	--redesign-button-overlay-alpha-text: var(--white-500);
 	--redesign-button-overlay-background: var(--white-500);
 	--redesign-button-overlay-pressed-background: var(--primary-230);
@@ -740,15 +743,25 @@ html.theme-light {
 	--redesign-button-positive-background: var(--green-430);
 	--redesign-button-positive-pressed-background: var(--green-460);
 	--redesign-button-positive-text: var(--white-500);
-	--redesign-button-primary-alt-background: hsl(235 calc(1 * 85.6%) 64.7% / 0);
+	--redesign-button-primary-alt-background: hsl(
+		235 calc(1 * 85.6%) 64.7% / 0
+	);
 	--redesign-button-primary-alt-border: var(--brand-360);
-	--redesign-button-primary-alt-on-blurple-background: hsl(235 calc(1 * 66.7%) 58.8% / 0);
+	--redesign-button-primary-alt-on-blurple-background: hsl(
+		235 calc(1 * 66.7%) 58.8% / 0
+	);
 	--redesign-button-primary-alt-on-blurple-border: var(--white-500);
-	--redesign-button-primary-alt-on-blurple-pressed-background: var(--brand-530);
+	--redesign-button-primary-alt-on-blurple-pressed-background: var(
+		--brand-530
+	);
 	--redesign-button-primary-alt-on-blurple-pressed-border: var(--brand-360);
 	--redesign-button-primary-alt-on-blurple-text: var(--white-500);
-	--redesign-button-primary-alt-pressed-background: hsl(235 calc(1 * 47%) 25.9% / 0.16);
-	--redesign-button-primary-alt-pressed-border: hsl(235 calc(1 * 86.1%) 71.8% / 0.5);
+	--redesign-button-primary-alt-pressed-background: hsl(
+		235 calc(1 * 47%) 25.9% / 0.16
+	);
+	--redesign-button-primary-alt-pressed-border: hsl(
+		235 calc(1 * 86.1%) 71.8% / 0.5
+	);
 	--redesign-button-primary-alt-pressed-text: var(--brand-360);
 	--redesign-button-primary-alt-text: var(--brand-360);
 	--redesign-button-primary-background: var(--brand-500);
@@ -760,14 +773,22 @@ html.theme-light {
 	--redesign-button-primary-text: var(--white-500);
 	--redesign-button-secondary-background: var(--primary-460);
 	--redesign-button-secondary-border: hsl(0 calc(1 * 0%) 100% / 0.08);
-	--redesign-button-secondary-overlay-background: hsl(0 calc(1 * 0%) 0% / 0.54);
-	--redesign-button-secondary-overlay-pressed-background: hsl(0 calc(1 * 0%) 0% / 0.64);
+	--redesign-button-secondary-overlay-background: hsl(
+		0 calc(1 * 0%) 0% / 0.54
+	);
+	--redesign-button-secondary-overlay-pressed-background: hsl(
+		0 calc(1 * 0%) 0% / 0.64
+	);
 	--redesign-button-secondary-overlay-text: var(--white-500);
 	--redesign-button-secondary-pressed-background: var(--primary-500);
 	--redesign-button-secondary-pressed-border: hsl(0 calc(1 * 0%) 0% / 0);
 	--redesign-button-secondary-text: var(--primary-230);
-	--redesign-button-selected-background: hsl(235 calc(1 * 85.6%) 64.7% / 0.24);
-	--redesign-button-selected-pressed-background: hsl(235 calc(1 * 85.6%) 64.7% / 0.28);
+	--redesign-button-selected-background: hsl(
+		235 calc(1 * 85.6%) 64.7% / 0.24
+	);
+	--redesign-button-selected-pressed-background: hsl(
+		235 calc(1 * 85.6%) 64.7% / 0.28
+	);
 	--redesign-button-selected-text: var(--brand-500);
 	--redesign-button-tertiary-background: var(--primary-660);
 	--redesign-button-tertiary-pressed-background: var(--primary-560);
@@ -827,14 +848,17 @@ html.theme-light {
 	--thread-channel-spine: var(--primary-500);
 	--toast-bg: var(--primary-800);
 	--typing-indicator-bg: var(--primary-630);
-	--user-profile-header-overflow-background: hsl(225 calc(1 * 6.3%) 12.5% / 0.5);
+	--user-profile-header-overflow-background: hsl(
+		225 calc(1 * 6.3%) 12.5% / 0.5
+	);
 	--voice-video-video-tile-background: hsl(233 calc(1 * 9 / 0.3%) 19% / 0.4);
-	--voice-video-video-tile-blur-fallback: hsl(225 calc(1 * 6.3%) 12.5% / 0.48);
+	--voice-video-video-tile-blur-fallback: hsl(
+		225 calc(1 * 6.3%) 12.5% / 0.48
+	);
 	--white: var(--bg-0);
 	--you-bar-bg: var(--primary-800);
 
 	--elevation-low: none;
-	--shadow-ledge: none;
 
 	--brand-500: var(--acc-0); /* unread bar, accent buttons, spotify */
 	--brand-530: var(--acc-0); /* hover highlight in context menu */
