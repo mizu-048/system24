@@ -1,0 +1,48 @@
+/* debloat */
+
+/*Blocks a quest popup while in vc.*/
+.wrapper_b9619e {display: none;}
+
+/*Blocks a quest popup above the game status bar*/
+.wrapper_c721cc {display: none;}
+
+/*Removes the clan tag from the member list.*/
+.clanTag_a31c43 {display: none;}
+
+/*Blocks the question mark icon in the top right of the screen.*/
+a[href="https://support.discord.com"] {display: none;}
+
+/*Removes the gift, emoji and sticker button(s) next to the gif picker.*/
+[aria-label="Send a gift"] {display: none;}
+/* [aria-label="Select emoji"] {display: none;} */
+/* [aria-label="Open sticker picker"] {display: none;} */
+
+/*Removes the nitro and shop tab from your messages screen.*/
+a[href="/store"], a[href="/shop"] {display: none;}
+
+/*Reverts the moreusertags font change, and makes the tags capitalised.*/
+.botText_a9e77f {font-weight: normal; text-transform: capitalize;}
+
+/*For use with pinned tabs, removes the name of the tabs.*/
+.headerText_c47fa9 {display: none;}
+
+/*For use with pinned tabs, removes the "Create DM" button.*/
+.privateChannelRecipientsInviteButtonIcon_c47fa9 {display: none;}
+
+/*For use with pinned tabs, removes the collapse arrow icon.*/
+.vc-pindms-collapse-icon {display: none;}
+
+/*For use with pinned tabs, shows all related hidden elements when hovered over.*/
+.privateChannelsHeaderContainer_c47fa9:hover .vc-pindms-collapse-icon {display: block !important;}
+.privateChannelsHeaderContainer_c47fa9:hover .privateChannelRecipientsInviteButtonIcon_c47fa9 {display: block !important;}
+.privateChannelsHeaderContainer_c47fa9:hover .headerText_c47fa9 {display: block !important;}
+
+/*Removes the quests tab from the gift inventory*/
+.questsContainer_f1791d {display: none !important;}
+
+/*Removes the add to dictionary context menu item.*/
+#textarea-context-add-to-dictionary {display: none;}
+
+/*Hides the role separator.*/
+.membersGroup_cbd271 {display: none;}
+
