@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-
 :root {
 	--font: 'DM Mono';
 	letter-spacing: -0.05ch;
@@ -237,7 +236,7 @@ svg[class^=slider_] > rect[fill='white'] /* settings checkbuttons slider */ {
 
 /* move chat bar out */
 :root {
-	--custom-channel-textarea-text-area-height: 56px;
+	--custom-channel-textarea-text-area-height: 50px;
 }
 .form_a7d72e {
 	padding: 0;
@@ -518,7 +517,7 @@ html.theme-light {
 	--android-navigation-scrim-background: hsl(240 calc(1 * 4%) 4.9% / 0.5);
 	--android-ripple: hsl(0 calc(1 * 0%) 100% / 0.07);
 	--autocomplete-bg: var(--bg-1);
-	--background-accent: var(--bg-2);
+	--background-accent: var(--bg-1);
 	--background-floating: var(--primary-800);
 	--background-mentioned: var(--mention-overlay);
 	--background-mentioned-hover: var(--mention-hover-overlay);
@@ -835,7 +834,6 @@ html.theme-light {
 
 	--elevation-low: none;
 	--shadow-ledge: none;
-
 	--brand-500: var(--acc-0); /* unread bar, accent buttons, spotify */
 	--brand-530: var(--acc-0); /* hover highlight in context menu */
 	--brand-560: var(--acc-1); /* accent button hover */
