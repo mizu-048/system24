@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
+
 :root {
-	--font: 'DM Mono';
-	letter-spacing: -0.05ch;
-	font-weight: 300;
-	--label-font-weight: 500;
+    --font: 'JetBrains Mono', monospace;
+    letter-spacing: -0.05ch;
+    font-weight: 300;
+    --label-font-weight: 500;
 
 	--corner-text: 'system24';
 
